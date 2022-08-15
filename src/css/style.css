@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050607;
+}
+
+#root {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h1, h2, h3, h4 {
+  color: white;
+}
+
+input {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.container__main {
+  width: 500px;
+  padding: 10px;
+  background-color: #023e8a;
+  border-radius: 8px;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container__main h2 {
+  margin-bottom: 20px;
+}
+.container__main .container__main-input-text {
+  width: 200px;
+  height: 25px;
+  border-radius: 8px;
+  padding: 2px 0px 2px 8px;
+}
+.container__main .container__main-button {
+  border: none;
+  width: 28px;
+  height: 25px;
+  transform: translate(-8px, 0px);
+  border-radius: 0px 8px 0px 0px;
+  transition: 300ms ease;
+}
+.container__main .container__main-button:hover {
+  transform: translate(-7px, -4px);
+}
+.container__main .container__main-box-tarefas .container__main-tarefa {
+  margin: 10px auto 10px;
+}/*# sourceMappingURL=style.css.map */
