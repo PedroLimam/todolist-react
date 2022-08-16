@@ -64,9 +64,23 @@ ul{
     } 
 
     .container__main-box-tarefas{
+        width: 80%;
+        height: 230px;
+        padding: 5px;
+        overflow: auto;
 
         .container__main-tarefa{
+            width: 100%;
+            height: 24px;
             margin: 10px auto 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            
+            @include row-alCenter(space-around);
+
+            .edit{
+                margin-right: 30px;
+            }
         }
     }
 

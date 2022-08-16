@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import {FaPlus} from 'react-icons/fa'
+import {FaPlus, FaWindowClose, FaEdit} from 'react-icons/fa'
 
 function Main(){
 
@@ -7,8 +7,20 @@ function Main(){
     const newTarefa = useRef()
 
     function adcTarefas(){
+
+        for(let tarefa in tarefas){
+            if(tarefas[tarefa] === newTarefa.current.value){
+              return
+            }
+        }
+
         setTarefas(prevState => [...prevState,  newTarefa.current.value])
-        console.log(tarefas)
+    }
+
+    function deleteTarefa(e, index){
+        e.preventDefault()
+        const tarefasFilter = tarefas.filter(tarefa => tarefas.indexOf(tarefa) !== index)
+        setTarefas(tarefasFilter)
     }
 
     return(
@@ -22,7 +34,9 @@ function Main(){
 
             <div className="container__main-box-tarefas" >
                 <ul>
-                    { tarefas.map((el, index) => <li className="container__main-tarefa" key={index}> {el} </li>) }
+                    { tarefas.map((el, index) => (
+                        <li className="container__main-tarefa" key={index}> {el}  <div><FaEdit className="edit"/> <FaWindowClose onClick={(e) => deleteTarefa(e, index)} className="delete" /></div></li>
+                    )) }
                 </ul>
             </div>
         </div>
