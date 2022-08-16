@@ -1,3 +1,4 @@
+@import '_colors.scss';
 @import '_mixins.scss';
 
 *{
@@ -7,7 +8,7 @@
 }
 
 body{
-    background-color: #050607; 
+    background-color: $color-bg; 
 }
 
 #root{
@@ -34,7 +35,7 @@ ul{
 .container__main{
     width: 500px;
     padding: 10px;
-    background-color: #023e8a;
+    background-color: $color-main;
     border-radius: 8px;
     margin-top: 10vh;
     @include column-alCenter(center);
@@ -48,6 +49,11 @@ ul{
         height: 25px;
         border-radius: 8px;
         padding: 2px 0px 2px 8px;
+        
+        &:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
     }
 
     .container__main-button{
@@ -71,15 +77,32 @@ ul{
 
         .container__main-tarefa{
             width: 100%;
-            height: 24px;
+            height: 28px;
             margin: 10px auto 10px;
-            border: 1px solid white;
+            padding: 0px 10px;
+            background-color: white;
             border-radius: 5px;
             
-            @include row-alCenter(space-around);
+            @include row-alCenter(space-between);
 
             .edit{
                 margin-right: 30px;
+                color: $color-main;
+                transition: 300ms;
+                cursor: pointer;
+
+                :hover{
+                    transform: scale(1.05);
+                }
+            }
+
+            .delete{
+                color: red;
+                cursor: pointer;
+
+                :hover{
+                    transform: scale(1.05);
+                }
             }
         }
     }
